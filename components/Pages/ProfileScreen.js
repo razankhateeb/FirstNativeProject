@@ -1,5 +1,7 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import SettingsGroup from '../UI/Settings/SettingsGroup';
+import {Accountsettings, settings} from '../../data/settings';
 
 const ProfileScreen = () => {
   return (
@@ -13,20 +15,13 @@ const ProfileScreen = () => {
         />
         <Text style={styles.name}>Profile Screen</Text>
       </View>
+      <ScrollView>
+        <SettingsGroup title={'Profile'} settings={settings}></SettingsGroup>
 
-      <View>
-        <Text>Profile Settings</Text>
-
-        <View style={styles.settingsBox}>
-          <Text>Account information</Text>
-        </View>
-        <View style={styles.settingsBox}>
-          <Text>Account information</Text>
-        </View>
-        <View style={styles.settingsBox}>
-          <Text>Account information</Text>
-        </View>
-      </View>
+        <SettingsGroup
+          title={'Account Settings'}
+          settings={Accountsettings}></SettingsGroup>
+      </ScrollView>
     </View>
   );
 };
@@ -53,12 +48,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18,
     marginLeft: 16,
-  },
-  settingsBox: {
-    backgroundColor: '#fff',
-    width: 350,
-    padding: 20,
-    borderRadius: 10,
-    marginBottom: 5,
   },
 });
