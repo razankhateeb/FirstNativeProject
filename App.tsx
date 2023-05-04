@@ -10,14 +10,15 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import WelcomeScreen from './components/WelcomeScreen';
-import MainScreen from './components/MainScreen';
-import ProfileScreen from './components/ProfileScreen';
+import HomeScreen from './components/Pages/HomeScreen';
+import MainScreen from './components/Pages/ExploreScreen';
+import ProfileScreen from './components/Pages/ProfileScreen';
+import ExploreScreen from './components/Pages/ExploreScreen';
 
 function StackNavigators() {
   const Stack = createNativeStackNavigator();
   <Stack.Navigator>
-    <Stack.Screen name="Home" component={WelcomeScreen} />
+    <Stack.Screen name="Home" component={HomeScreen} />
     <Stack.Screen name="Main" component={MainScreen} />
   </Stack.Navigator>;
 }
@@ -32,8 +33,8 @@ function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Home" component={WelcomeScreen} />
-        <Tab.Screen name="Explore" component={MainScreen} />
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Explore" component={ExploreScreen} />
         <Tab.Screen name="Profile" component={ProfileScreen} />
       </Tab.Navigator>
     </NavigationContainer>

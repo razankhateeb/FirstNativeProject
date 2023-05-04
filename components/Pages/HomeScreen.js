@@ -1,19 +1,19 @@
 import {Button, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-const WelcomeScreen = ({navigation}) => {
+const HomeScreen = ({navigation}) => {
   function navigateToPageHandler() {
     navigation.navigate('Main');
   }
   return (
     <View style={styles.container}>
-      <Text>WelcomeScreen</Text>
-      <Button title="Press" onPress={navigateToPageHandler} />
+      <Text>HomeScreen</Text>
+      {/* <Button title="Press" onPress={navigateToPageHandler} /> */}
     </View>
   );
 };
 
-export default WelcomeScreen;
+export default HomeScreen;
 
 const styles = StyleSheet.create({
   container: {
