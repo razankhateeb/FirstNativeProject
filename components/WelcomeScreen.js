@@ -6,7 +6,7 @@ const WelcomeScreen = ({navigation}) => {
     navigation.navigate('Main');
   }
   return (
-    <View>
+    <View style={styles.container}>
       <Text>WelcomeScreen</Text>
       <Button title="Press" onPress={navigateToPageHandler} />
     </View>
@@ -15,4 +15,10 @@ const WelcomeScreen = ({navigation}) => {
 
 export default WelcomeScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});

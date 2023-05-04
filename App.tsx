@@ -8,35 +8,34 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import WelcomeScreen from './components/WelcomeScreen';
 import MainScreen from './components/MainScreen';
+import ProfileScreen from './components/ProfileScreen';
+
+function StackNavigators() {
+  const Stack = createNativeStackNavigator();
+  <Stack.Navigator>
+    <Stack.Screen name="Home" component={WelcomeScreen} />
+    <Stack.Screen name="Main" component={MainScreen} />
+  </Stack.Navigator>;
+}
+
+function Drawer() {
+  const Drawer = createDrawerNavigator();
+}
 
 function App() {
-  const Stack = createNativeStackNavigator();
+  const Tab = createBottomTabNavigator();
+
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={WelcomeScreen} />
-        <Stack.Screen name="Main" component={MainScreen} />
-      </Stack.Navigator>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={WelcomeScreen} />
+        <Tab.Screen name="Explore" component={MainScreen} />
+        <Tab.Screen name="Profile" component={ProfileScreen} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
