@@ -10,7 +10,7 @@ const ProfileScreen = () => {
         <Image
           style={styles.image}
           source={{
-            uri: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png',
+            uri: 'https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png',
           }}
         />
         <Text style={styles.name}>Profile Screen</Text>
